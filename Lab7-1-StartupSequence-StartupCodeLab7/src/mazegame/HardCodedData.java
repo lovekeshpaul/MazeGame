@@ -33,17 +33,38 @@ public class HardCodedData implements IMazeData {
 		Location armourer = new Location ("a place to buy armor", "Armourer");
 		
 		// Connect Locations
-		startUp.addExit("south",  new Exit ("you see an open space to the south", lounge));
-		lounge.addExit("north", new Exit("you see a mound of paper to the north", startUp));
+		startUp.addExit("south",  new Exit ("a place where filthy creatures are always in a search of fresh meat", island));
+		startUp.addExit("north",  new Exit ("a place where no one belongs to", mountain));
+		startUp.addExit("west",  new Exit ("a place where sun never rises", equator));
+		startUp.addExit("east", new Exit("literally black river, where there is black water all the time", river));
+		startUp.addExit("southwest", new Exit("a place to buy armor", armourer));
+		startUp.addExit("southwest", new Exit("a place to buy weapons", blacksmith));
 
-        startUp.addExit("west", new Exit("you see a terrifying office to the west", gregsOffice));
-        gregsOffice.addExit("east", new Exit("you see a mound of paper to the east", startUp));
+        mountain.addExit("east", new Exit("a place to buy weapons", blacksmith));
+        mountain.addExit("south", new Exit("a mystery place", startUp));
+        mountain.addExit("southwest", new Exit("a place where sun never rises", equator));
 
-        t127.addExit("south", new Exit("you see a mound of paper to the south", startUp));
-        startUp.addExit("north", new Exit("you see a bleak place to the north", t127));
+        blacksmith.addExit("west", new Exit("a place where no one belongs to", mountain));
+        blacksmith.addExit("southwest", new Exit("a mystery place", startUp));
+        blacksmith.addExit("south", new Exit("literally black river, where there is black water all the time", river));
 
-        lounge.addExit("northwest", new Exit("you see a terrifying office to the northwest", gregsOffice));
-        gregsOffice.addExit("southeast", new Exit("you see an open space to the southeast", lounge));
-			
+        equator.addExit("northeast", new Exit("a place where no one belongs to", mountain));
+        equator.addExit("east", new Exit("a mystery place", startUp));
+        equator.addExit("southeast", new Exit("a place where filthy creatures are always in a search of fresh meat", island));
+        equator.addExit("south", new Exit("a place to buy armor", armourer));
+        
+		river.addExit("north", new Exit("a place to buy weapons", blacksmith));
+		river.addExit("northwest", new Exit("a place where no one belongs to", mountain));
+		river.addExit("west", new Exit("a mystery place", startUp));
+		river.addExit("southwest", new Exit("a place where filthy creatures are always in a search of fresh meat", island));
+		
+		armourer.addExit("north", new Exit("a place where sun never rises", equator));
+		armourer.addExit("northeast", new Exit("a mystery place", startUp));
+		armourer.addExit("east", new Exit("a place where filthy creatures are always in a search of fresh meat", island));
+
+		island.addExit("west", new Exit("a place to buy armor", armourer));
+		island.addExit("northwest", new Exit("a place where sun never rises", equator));
+		island.addExit("north", new Exit("a mystery place", startUp));
+		island.addExit("northeast", new Exit("literally black river, where there is black water all the time", river));
 	}
 }
